@@ -284,3 +284,4 @@ const server = http.createServer(async (req, res) => {
 server.listen(PORT, () => {
   console.log(`Attendance Management System running at http://localhost:${PORT}`);
 });
+// Version 1.1.0 release
