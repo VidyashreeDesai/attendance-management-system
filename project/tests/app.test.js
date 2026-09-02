@@ -1,0 +1,3 @@
+test("Attendance Management application test", () => {
+  expect(1 + 1).toBe(2);
+});
