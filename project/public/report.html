@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports - Attendance Management System</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">Attendance MS</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/dashboard.html">Dashboard</a></li>
+      <li><a href="/add-student.html">Add Student</a></li>
+      <li><a href="/students.html">View Students</a></li>
+      <li><a href="/attendance.html">Mark Attendance</a></li>
+      <li><a href="/records.html">Records</a></li>
+      <li><a href="/report.html" class="active">Reports</a></li>
+      <li><a href="#" id="logoutBtn">Logout</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle">&#9776;</button>
+  </nav>
+
+  <main class="page-container">
+    <h1 class="page-title">Attendance Report</h1>
+    <div class="filter-bar">
+      <div class="form-group">
+        <label for="reportCourse">Course</label>
+        <select id="reportCourse">
+          <option value="">All Courses</option>
+          <option value="CSE">CSE</option><option value="ISE">ISE</option>
+          <option value="ECE">ECE</option><option value="ME">ME</option>
+          <option value="CE">CE</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" id="genReportBtn">Generate Report</button>
+    </div>
+    <div id="msgBox" class="msg-box hidden"></div>
+    <div class="table-wrapper">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Total Classes</th>
+            <th>Present</th>
+            <th>Absent</th>
+            <th>Attendance %</th>
+          </tr>
+        </thead>
+        <tbody id="reportBody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="/js/report.js"></script>
+</body>
+</html>

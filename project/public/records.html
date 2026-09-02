@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attendance Records - Attendance Management System</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">Attendance MS</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/dashboard.html">Dashboard</a></li>
+      <li><a href="/add-student.html">Add Student</a></li>
+      <li><a href="/students.html">View Students</a></li>
+      <li><a href="/attendance.html">Mark Attendance</a></li>
+      <li><a href="/records.html" class="active">Records</a></li>
+      <li><a href="/report.html">Reports</a></li>
+      <li><a href="#" id="logoutBtn">Logout</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle">&#9776;</button>
+  </nav>
+
+  <main class="page-container">
+    <h1 class="page-title">Attendance Records</h1>
+    <div class="filter-bar">
+      <div class="form-group">
+        <label for="filterDate">Date</label>
+        <input type="date" id="filterDate" />
+      </div>
+      <div class="form-group">
+        <label for="filterStudent">Student ID</label>
+        <input type="text" id="filterStudent" placeholder="e.g. S001" />
+      </div>
+      <div class="form-group">
+        <label for="filterCourse">Course</label>
+        <select id="filterCourse">
+          <option value="">All</option>
+          <option value="CSE">CSE</option><option value="ISE">ISE</option>
+          <option value="ECE">ECE</option><option value="ME">ME</option>
+          <option value="CE">CE</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="filterStatus">Status</label>
+        <select id="filterStatus">
+          <option value="">All</option>
+          <option value="Present">Present</option>
+          <option value="Absent">Absent</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" id="filterBtn">Filter</button>
+      <button class="btn btn-secondary" id="clearFilterBtn">Clear</button>
+    </div>
+    <div id="msgBox" class="msg-box hidden"></div>
+    <div class="table-wrapper">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="recordsBody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="/js/records.js"></script>
+</body>
+</html>

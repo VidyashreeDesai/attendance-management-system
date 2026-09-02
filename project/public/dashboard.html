@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Attendance Management System</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">Attendance MS</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="/add-student.html">Add Student</a></li>
+      <li><a href="/students.html">View Students</a></li>
+      <li><a href="/attendance.html">Mark Attendance</a></li>
+      <li><a href="/records.html">Records</a></li>
+      <li><a href="/report.html">Reports</a></li>
+      <li><a href="#" id="logoutBtn">Logout</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle">&#9776;</button>
+  </nav>
+
+  <main class="page-container">
+    <h1 class="page-title">Dashboard</h1>
+    <div class="stats-grid">
+      <div class="stat-card stat-blue">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">Total Students</span>
+          <span class="stat-value" id="totalStudents">0</span>
+        </div>
+      </div>
+      <div class="stat-card stat-green">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">Present Today</span>
+          <span class="stat-value" id="presentToday">0</span>
+        </div>
+      </div>
+      <div class="stat-card stat-red">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">Absent Today</span>
+          <span class="stat-value" id="absentToday">0</span>
+        </div>
+      </div>
+      <div class="stat-card stat-purple">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">Overall Attendance</span>
+          <span class="stat-value" id="overallPct">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="quick-actions">
+      <h2>Quick Actions</h2>
+      <div class="action-grid">
+        <a href="/add-student.html" class="action-btn">Add New Student</a>
+        <a href="/attendance.html" class="action-btn">Mark Attendance</a>
+        <a href="/report.html" class="action-btn">View Reports</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

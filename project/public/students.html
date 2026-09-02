@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Students - Attendance Management System</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">Attendance MS</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/dashboard.html">Dashboard</a></li>
+      <li><a href="/add-student.html">Add Student</a></li>
+      <li><a href="/students.html" class="active">View Students</a></li>
+      <li><a href="/attendance.html">Mark Attendance</a></li>
+      <li><a href="/records.html">Records</a></li>
+      <li><a href="/report.html">Reports</a></li>
+      <li><a href="#" id="logoutBtn">Logout</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle">&#9776;</button>
+  </nav>
+
+  <main class="page-container">
+    <h1 class="page-title">View Students</h1>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search by Student ID, Name, or Course..." />
+      <button class="btn btn-primary" id="searchBtn">Search</button>
+      <button class="btn btn-secondary" id="clearBtn">Clear</button>
+    </div>
+    <div id="msgBox" class="msg-box hidden"></div>
+    <div class="table-wrapper">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Course</th>
+            <th>Semester</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="studentsBody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Edit Modal -->
+  <div class="modal-overlay hidden" id="editModal">
+    <div class="modal-card">
+      <h2>Edit Student</h2>
+      <form id="editForm">
+        <input type="hidden" id="editId" />
+        <div class="form-group">
+          <label>Student ID</label>
+          <input type="text" id="editStudentId" disabled />
+        </div>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" id="editName" required />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="editEmail" required />
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="text" id="editPhone" required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Course</label>
+            <select id="editCourse" required>
+              <option value="CSE">CSE</option><option value="ISE">ISE</option>
+              <option value="ECE">ECE</option><option value="ME">ME</option>
+              <option value="CE">CE</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Semester</label>
+            <select id="editSemester" required>
+              <option value="1">1</option><option value="2">2</option>
+              <option value="3">3</option><option value="4">4</option>
+              <option value="5">5</option><option value="6">6</option>
+              <option value="7">7</option><option value="8">8</option>
+            </select>
+          </div>
+        </div>
+        <div id="editMsgBox" class="msg-box hidden"></div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Update</button>
+          <button type="button" class="btn btn-secondary" id="cancelEdit">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/students.js"></script>
+</body>
+</html>

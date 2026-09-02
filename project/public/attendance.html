@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mark Attendance - Attendance Management System</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">Attendance MS</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/dashboard.html">Dashboard</a></li>
+      <li><a href="/add-student.html">Add Student</a></li>
+      <li><a href="/students.html">View Students</a></li>
+      <li><a href="/attendance.html" class="active">Mark Attendance</a></li>
+      <li><a href="/records.html">Records</a></li>
+      <li><a href="/report.html">Reports</a></li>
+      <li><a href="#" id="logoutBtn">Logout</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle">&#9776;</button>
+  </nav>
+
+  <main class="page-container">
+    <h1 class="page-title">Mark Attendance</h1>
+    <div class="filter-bar">
+      <div class="form-group">
+        <label for="attDate">Date</label>
+        <input type="date" id="attDate" required />
+      </div>
+      <div class="form-group">
+        <label for="attCourse">Course</label>
+        <select id="attCourse">
+          <option value="">All Courses</option>
+          <option value="CSE">CSE</option><option value="ISE">ISE</option>
+          <option value="ECE">ECE</option><option value="ME">ME</option>
+          <option value="CE">CE</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="attSemester">Semester</label>
+        <select id="attSemester">
+          <option value="">All Semesters</option>
+          <option value="1">1</option><option value="2">2</option>
+          <option value="3">3</option><option value="4">4</option>
+          <option value="5">5</option><option value="6">6</option>
+          <option value="7">7</option><option value="8">8</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" id="loadBtn">Load Students</button>
+    </div>
+    <div id="msgBox" class="msg-box hidden"></div>
+    <div class="table-wrapper hidden" id="attTableWrapper">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Course</th>
+            <th>Semester</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="attBody"></tbody>
+      </table>
+    </div>
+    <div class="form-actions hidden" id="saveBar">
+      <button class="btn btn-primary" id="saveBtn">Save Attendance</button>
+      <button class="btn btn-secondary" id="markAllPresent">Mark All Present</button>
+    </div>
+  </main>
+
+  <script src="/js/attendance.js"></script>
+</body>
+</html>
